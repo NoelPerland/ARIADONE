@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="popUpBtn" aria-expanded="false">popup</button>
+
+    <div
+      id="accessibleModal"
+      class="hidden"
+      role="dialog"
+      aria-labelledby="popUpBtn"
+    >
+      <h2 id="modalTitle">Exempel på modalfönster</h2>
+      <p>Här är lite text i modalfönstret.</p>
+      <button id="closeModalBtn">Stäng</button>
+    </div>
+
+    <button id="popupBtn2" aria-expanded="false">popup 2</button>
+
+    <dialog id="accessibleDialog" aria-labelledby="popUpBtn2">
+      <h2>Exempel på modalfönster med &lt;dialog&gt;</h2>
+      <p>Här är innehållet i modalfönstret.</p>
+      <button id="closeDialogBtn">Stäng</button>
+    </dialog>
+
+    <!-- En dialog tagg är bättre för tillgäbgligheten då den är semantisk. Många webbläsare gör even så att dialog taggen
+    blir låst tills användaren väljer att lämna den. Dialog Stödjer även tangentbordsnavigering bättre än vad en div skulle
+    göra.  -->
+
+    <button id="menuButton" aria-label="Toggle Menu">☰</button>
+    <nav id="menuContent" class="hidden">
+      <ul>
+        <li><a href="#">Hem</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Tjänster</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
